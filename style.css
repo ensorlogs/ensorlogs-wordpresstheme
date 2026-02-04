@@ -1,0 +1,22 @@
+/*
+Theme Name: EnsorLogs
+Theme URI: https://ensorlogs.com
+Author: Ensor
+Description: Theme base para EnsorLogs. Aprender desde problemas reales.
+Version: 0.1
+*/
+
+:root {
+  --ensor-yellow: #F1B22F;
+  --ensor-orange: #E85418;
+  --ensor-green: #9B9C62;
+  --ensor-black: #0E1114;
+  --ensor-white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--ensor-black);
+  color: var(--ensor-white);
+}
