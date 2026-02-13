@@ -1,0 +1,1025 @@
+/* ==============================
+   BASE CUADERNO
+================================ */
+body {
+  background: #F6F3EE;
+  color: #1c1c1c;
+}
+
+.log-single {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ==============================
+   BREADCRUMB
+================================ */
+.log-breadcrumb {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.log-breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.log-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   HEADER LOG
+================================ */
+.log-header {
+  margin-bottom: 32px;
+}
+
+.log-id {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.log-title-card h1 {
+  font-size: 34px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.log-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.log-meta .tag {
+  background: #E7DFC1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* ==============================
+   BLOQUES / SECCIONES
+================================ */
+.log-section {
+  background: #FBF9F4;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.log-section-header {
+  background: #EFEADF;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid #DDD;
+}
+
+.log-section-body {
+  padding: 20px 22px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Listas dentro del contenido */
+.log-section-body ul {
+  padding-left: 20px;
+}
+
+.log-section-body li {
+  margin-bottom: 8px;
+}
+
+/* ==============================
+   QUIZ
+================================ */
+.log-quiz-btn {
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: #2E2E2E;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.log-quiz-btn:hover {
+  background: #000;
+}
+
+.quiz-hints {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f6f3ee;
+  border-left: 4px solid #c9a227;
+  font-size: 0.95rem;
+}
+
+.quiz-hints strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ==============================
+   COMENTARIOS
+================================ */
+.log-comments {
+  background: #FBF9F4;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 40px;
+}
+
+.log-comments h3 {
+  margin-bottom: 16px;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .log-title-card h1 {
+    font-size: 26px;
+  }
+
+  .log-meta {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =====================================================
+   ENSORLOGS · FILTRO SUPERIOR (WIREFRAME)
+   ===================================================== */
+
+.logs-filters {
+  background: #EDEAE5;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #CFCBC4;
+}
+
+.logs-filters-form {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 1.4rem 1.6rem;
+  background: #E6E2DC;
+
+  border: 1px solid #BDB8AF;
+  border-radius: 6px;
+}
+
+/* Texto "Buscar logs por:" */
+.logs-filters-form::before {
+  content: "Buscar logs por:";
+  font-weight: 600;
+  color: #2A2A2A;
+  margin-right: 0.6rem;
+  white-space: nowrap;
+}
+
+/* Botón sin empujar al extremo */
+.logs-filters-form button {
+  margin-left: 0;
+}
+
+/* TEXTO "Buscar logs por:" */
+.logs-filters-form::before {
+  content: "Buscar logs por:";
+  font-weight: 600;
+  color: #2A2A2A;
+  margin-right: 0.6rem;
+  white-space: nowrap;
+}
+
+/* SELECTS */
+.logs-filters-form select {
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #9E9E9E;
+  background: #F5F4F2;
+  font-size: 0.95rem;
+  color: #2A2A2A;
+}
+
+/* BOTÓN */
+.logs-filters-form button {
+  margin-left: auto;
+  padding: 0.45rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid #8E8E8E;
+  background: #D6D2CB;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logs-filters-form button:hover {
+  background: #C9C5BE;
+}
+
+@media (max-width: 768px) {
+  .logs-filters-form {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .logs-filters-form::before {
+    margin-bottom: 0.5rem;
+  }
+
+  .logs-filters-form select,
+  .logs-filters-form button {
+    width: 100%;
+  }
+}
+
+
+/* ==============================
+   PROGRESO DEL LOG (ANIMADO)
+   ============================== */
+
+.log-progress {
+  margin: 24px auto 32px;
+  max-width: 720px;
+}
+
+.log-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e0ddd8;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.log-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    #c9a227,
+    #d88c3a,
+    #A8BE7B
+  );
+  border-radius: 6px;
+  transition: width 0.6s ease-in-out;
+}
+
+.log-progress-text {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-align: right;
+  color: #333;
+}
+
+.log-completed {
+  margin: 40px auto;
+  max-width: 720px;
+  background: #f6f3ee;
+  border: 2px dashed #A8BE7B;
+  border-radius: 12px;
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.log-completed-inner h3 {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  color: #2f6f44;
+}
+
+.log-completed-inner p {
+  margin-top: 6px;
+  color: #333;
+}
+
+.log-completed-icon {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.log-progress-phase {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.phase-icon {
+  font-size: 1.5rem;
+}
+
+.log-progress {
+  position: sticky;
+  top: 64px; /* ajusta según tu header */
+  z-index: 50;
+
+  background: #f6f3ee;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 12px 0 24px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.log-progress-bar {
+  height: 6px;
+  background: #e2dfda;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.log-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c9b26c, #b79b45);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.log-progress-text {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-progress.is-scrolling {
+  padding: 6px 10px;
+  opacity: 0.96;
+}
+
+/* -------------------------
+   BARRA DE PROGRESO STICKY
+------------------------- */
+.log-progress {
+  position: sticky;
+  top: 72px; /* ajusta según tu header */
+  z-index: 50;
+
+  background: #f6f3ee;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 20px 0;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+
+/* Barra */
+.log-progress-bar {
+  height: 6px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.log-progress-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #c4c4c4;
+  transition: width .4s ease, background .3s ease;
+}
+
+/* Estados de color */
+.log-progress-fill.is-low { background: #d6b27c; }     /* análisis */
+.log-progress-fill.is-mid { background: #f0c75e; }     /* planteamiento */
+.log-progress-fill.is-high { background: #8fcf9a; }    /* quiz */
+.log-progress-fill.is-done { background: #4caf50; }    /* completado */
+
+/* Meta */
+.log-progress-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.log-progress-phase-icon {
+  font-size: 18px;
+}
+
+.log-progress-percent-wrapper {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+/* =========================
+   BARRA DE PROGRESO STICKY
+========================= */
+
+.log-progress-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #f6f3ee;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e0ddd8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Info superior */
+.log-progress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.log-progress-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.log-progress-meta {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Barra */
+.log-progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.log-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.log-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #d1b27c; /* dorado base */
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* Fase */
+.log-progress-phase {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.log-progress-percent {
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* COMPLETADO */
+.log-progress-fill.is-complete {
+  background: #A8BE7B; /* verde éxito */
+}
+
+
+/* =========================
+   VISIBILIDAD SEGÚN STICKY
+========================= */
+
+/* Por defecto: ocultar resumen */
+.log-progress-sticky .log-progress-info {
+  display: none;
+}
+
+/* Cuando está sticky: mostrar resumen */
+.log-progress-sticky.is-sticky .log-progress-info {
+  display: block;
+}
+
+/* -------------------------
+   BLOQUE ACTIVO
+------------------------- */
+.log-step {
+  transition: all 0.25s ease;
+}
+
+.log-step.is-active {
+  border-left: 6px solid #c9a86a; /* dorado suave */
+  background: #fbf9f4;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Header del bloque activo */
+.log-step.is-active .log-section-header {
+  font-weight: 700;
+}
+
+.log-action {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  background: #f9f9f9;
+}
+
+.log-action-confirm button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.log-section.is-completed {
+  border-left: 4px solid #4caf50;
+  background: #f3fff5;
+}
+
+/* logs Hints  */
+
+.log-hints {
+  display: none;
+}
+
+body.show-hints .log-hints {
+  display: block;
+}
+
+/* ===============================
+   BLOQUEO DE SOLUCIÓN ENSORLOGS
+   =============================== */
+
+.log-solution.is-locked .solution-content {
+  display: none;
+}
+
+.log-solution.is-locked::after {
+  content: "🔒 Resuelve el desafío para desbloquear la solución";
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff3cd;
+  border-left: 4px solid #885f13;
+  font-size: 0.95rem;
+  color: #5c4b1f;
+}
+
+/* =====================================================
+   ENSORLOGS – SISTEMA DE COLORES POR ETAPA
+===================================================== */
+
+/* 🔶 CONTEXTO – Lo que me estaba pasando */
+.log-step[data-step="contexto"] {
+  border-left: 6px solid #F5C35C;
+  background: #FFF4D6;
+}
+
+/* 🟠 PLANTEAMIENTO – Algo no cuadraba */
+.log-step[data-step="planteamiento"] {
+  border-left: 6px solid #E1A067;
+  background: #FBE8DA;
+}
+
+/* 🟡 QUIZ – Estado pendiente */
+.log-step[data-step="quiz"] {
+  border-left: 6px solid #D4A017;
+  background: #FFF8DC;
+  transition: all 0.3s ease;
+}
+
+/* 🔴 QUIZ – Error */
+.log-step[data-step="quiz"].quiz-error {
+  border-left: 6px solid #C0392B;
+  background: #FDEDEC;
+}
+
+/* 🟢 QUIZ – Resuelto correctamente */
+/* Estado completado del quiz (fuerza sobre estado amarillo base) */
+.log-step[data-step="quiz"].quiz-success,
+.log-step[data-step="quiz"].is-completed,
+.log-step[data-step="quiz"].quiz-success.is-active,
+.log-step[data-step="quiz"].is-completed.is-active {
+  border-left: 6px solid #A8BE7B;
+  background: #E8F5E9;
+}
+
+/* 🟡 PISTAS */
+.log-step[data-step="pistas"] {
+  border-left: 6px solid #E6B800;
+  background: #FFFDE7;
+}
+
+/* 🟢 SOLUCIÓN */
+.log-step[data-step="solucion"] {
+  border-left: 6px solid #A8BE7B;
+  background: #E8F5E9;
+  transition: all 0.3s ease;
+}
+
+/* Solución bloqueada */
+.log-solution.is-locked {
+  opacity: 0.6;
+}
+
+/* 🔵 REFLEXIÓN FINAL */
+.log-section-header:has(+ .log-section-body:contains("¿Que hemos Aprendido?")),
+.log-section-header:has(+ .log-section-body:contains("¿Qué hemos aprendido?")) {
+  border-left: 6px solid #5C6BC0;
+  background: #EEF1FB;
+}
+
+/* ===============================
+   ESTADO COMPLETADO DEL QUIZ
+================================ */
+
+.log-step[data-step="quiz"].quiz-success {
+  border-left: 6px solid #A8BE7B;
+  background: #E8F5E9;
+}
+
+/* Badge COMPLETADO */
+.quiz-completed-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  background: #A8BE7B;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  animation: fadeInBadge 0.3s ease forwards;
+}
+
+@keyframes fadeInBadge {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ==========================================
+   BOTÓN FINALIZACIÓN DEL LOG
+========================================== */
+
+.log-completion {
+  margin-top: 2.5rem;
+  text-align: left; 
+}
+ 
+
+.log-finish-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #1f1f1f;
+  color: #fff;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Hover elegante */
+.log-finish-btn:hover {
+  background: #F1BC5E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Estado completado */
+.log-finish-btn.completed {
+  background: #A8BE7B; /* verde sólido */
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(46,125,50,0.35);
+}
+
+/* Animación leve */
+.log-finish-btn.completed {
+  animation: pulseComplete 0.4s ease;
+}
+
+@keyframes pulseComplete {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.finish-icon {
+  font-size: 18px;
+  color: #2e7d32;
+}
+
+
+.related-logs {
+  margin-top: 4rem;
+}
+
+.related-logs h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.related-logs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.related-log-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  border: 1px solid #eee;
+}
+
+.related-log-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.related-log-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.related-log-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.related-log-topic {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #f5c35c;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.related-log-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ===============================
+   BOTÓN VER SOLUCIÓN
+=================================*/
+
+.show-solution-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.4rem;
+  margin-top: 1rem;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #E1A067, #F5C35C);
+  color: #1f1f1f;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.show-solution-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Active */
+.show-solution-btn:active {
+  transform: scale(0.98);
+}
+
+/* Cuando la solución ya está desbloqueada */
+.show-solution-btn.unlocked {
+  background: linear-gradient(135deg, #6DAE5E, #4E8E43);
+  color: #fff;
+}
+
+
+/* =========================
+   FILTROS ESTILO HOME
+========================= */
+
+.logs-filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 30px 0;
+  background: #f3f1ec;
+  border-top: 1px solid #e5e2dc;
+  border-bottom: 1px solid #e5e2dc;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #d6d2ca;
+  background: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 14px;
+}
+
+.filter-btn:hover {
+  background: #ece9e3;
+}
+
+.filter-btn.active {
+  background: #1e1e1e;
+  color: white;
+  border-color: #1e1e1e;
+}
+
+/* ===============================
+   EXPLORAR LOGS PAGE
+================================= */
+
+.logs-library {
+  background: #f6f6f6;
+  padding-bottom: 80px;
+}
+
+/* HERO */
+.logs-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.logs-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1f1f1f;
+}
+
+.logs-hero p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* FILTROS */
+.logs-filters-advanced {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-group select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  font-size: 14px;
+  min-width: 180px;
+  transition: 0.2s ease;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #d4a44e;
+  box-shadow: 0 0 0 3px rgba(212,164,78,0.15);
+}
+
+/* GRID */
+.logs-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.log-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.log-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.log-card-inner {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.log-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.log-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #4a2b88;
+  transition: 0.2s ease;
+}
+
+.log-card:hover .log-card-title {
+  text-decoration: underline;
+}
+
+/* META */
+.log-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.meta-item {
+  font-size: 14px;
+  color: #555;
+}
+
+/* TAGS */
+.tag {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tag-level {
+  background: #f5c35c;
+  color: #1f1f1f;
+}
+
+.tag-topic {
+  background: #e1a067;
+  color: white;
+}
+
+/* LINK */
+.log-card-link {
+  font-weight: 600;
+  color: #1f1f1f;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.log-card:hover .log-card-link {
+  color: #d4a44e;
+}

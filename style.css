@@ -20,3 +20,971 @@ body {
   background-color: var(--ensor-black);
   color: var(--ensor-white);
 }
+
+.site-header {
+  background: #2e2e2e;
+  color: #fff;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-search input[type="search"] {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.header-search input[type="submit"] {
+  background: #f2b94b; /* amarillo wireframe */
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.site-name {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== HEADER PILL COMPLETO ===== */
+
+.main-navigation {
+  margin-left: auto;
+}
+
+.header-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px; 
+  border-radius: 14px;
+
+  background: linear-gradient(
+    180deg,
+    #5a5a5a 0%,
+    #3e3e3e 100%
+  );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 10px 24px rgba(0,0,0,0.45);
+}
+
+/* ICONOS */
+.pill-icon,
+.pill-arrow {
+  color: #e6e6e6;
+  font-size: 15px;
+   opacity: 0.6;
+  user-select: none;
+}
+
+/* MENU */
+.pill-menu {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pill-menu a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f3f3f3;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+}
+
+.pill-menu a:hover {
+  color: #ffffff;
+}
+
+/* DIVISOR */
+.pill-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.25);
+}
+
+/* SEARCH */
+.pill-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill-search input {
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+   width: 200px;
+  font-size: 13px;
+}
+
+.pill-search button {
+  background: #f2b94b;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pill-search button:hover {
+  background: #f5c35c;
+}
+
+.custom-logo {
+  max-height: 90px;   /* CLAVE */
+  width: auto;
+  border-radius: 50%; /* mantiene el estilo avatar */
+}
+
+.site-header {
+  background:
+    linear-gradient(180deg, #3a3a3a 0%, #2b2b2b 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 1023px) {
+
+  .site-header {
+    padding: 12px 16px;
+  }
+
+  .site-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-pill {
+    transform: scale(0.95);
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  /* HEADER EN COLUMNA */
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* LOGO */
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .site-logo span {
+    font-size: 18px;
+  }
+
+  /* PILL */
+  .header-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 10px;
+  }
+
+  /* MENÚ */
+  .pill-menu {
+    gap: 14px;
+  }
+
+  .pill-menu a {
+    font-size: 14px;
+  }
+
+  /* BUSCADOR FUERA DEL HEADER EN MÓVIL */
+  .header-pill .pill-search {
+    display: none;
+  }
+
+}
+
+
+  /* ==================================
+   HEADER · HIDE SITE TITLE ON MOBILE
+   ================================== */
+
+@media (max-width: 767px) {
+
+  /* Ocultar texto ENSOR LOGS en mobile */
+  a.site-title {
+    display: none !important;
+  }
+
+}
+
+  /* Ajuste fino del header */
+  .site-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+/* ===== HERO ===== */
+
+.hero {
+  background: #ececec;
+  padding: 80px 20px;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.hero-search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-search input {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.hero-search button {
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background: #f2b94b;
+  cursor: pointer;
+}
+
+.hero-search button:hover {
+  background: #f5c35c;
+}
+
+/* ===== HOW IT WORKS ===== */
+
+/* ===============================
+   HOW IT WORKS · ENSORLOGS
+   =============================== */
+
+
+.how-notes {
+  background: #f4f1ec; /* papel */
+  padding: 10px 20px 30px 20px;
+}
+
+.how-notes-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.how-notes-inner h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #222;
+}
+
+/* GRID */
+.how-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* NOTA */
+.how-note {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+/* CABECERA */
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.note-header i {
+  font-size: 18px;
+}
+
+/* TEXTO */
+.how-note p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+}
+
+/* COLORES TIPO LIBRETA */
+.note-comprende {
+  background: #F5C35C;
+}
+
+.note-practica {
+  background: #e1a067;
+}
+
+.note-evalua {
+  background: #a8be7b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================
+   FORCE HIDE SITE TITLE ON MOBILE
+   ================================== */
+
+@media (max-width: 767px) {
+  .site-name {
+    display: none;
+  }
+}
+
+/* ===============================
+   HOME · FIX FONDOS OSCUROS
+   =============================== */
+
+/* Forzar fondo claro en el home */
+body.home,
+body.home main,
+body.home .site-content {
+  background: #f6f3ee;
+}
+
+/* Bloque filtros: integrado */
+.logs-filters {
+  background: #f2f2f2;
+  margin-bottom: 30px;
+}
+
+/* Resultados */
+.logs-results {
+  background: transparent;
+  padding-bottom: 40px;
+}
+
+/* Mensaje "no hay logs" */
+.logs-results p {
+  color: #444;
+  font-size: 15px;
+}
+
+/* Evitar herencia de color blanco */
+body.home .logs-results,
+body.home .logs-results * {
+  color: inherit;
+}
+
+
+/* ===============================
+   HOME · ALIGNMENT SYSTEM
+   =============================== */
+
+/* Todas las secciones principales del home */
+body.home section {
+  text-align: center;
+}
+
+/* El contenido interno puede volver a la izquierda */
+body.home section .logs-grid,
+body.home section .recommended-grid,
+body.home section .logs-filter-form,
+body.home section .log-card {
+  text-align: left;
+}
+
+
+/* =====================================================
+   ENSORLOGS · SECCIÓN LOGS (FIX + DISEÑO DEFINITIVO)
+   ===================================================== */
+
+/* ---------- RESET LOCAL (rompe herencias malas) ---------- */
+.logs-results,
+.logs-results * {
+  color: #1f2937 !important;
+  text-align: left !important;
+  box-sizing: border-box;
+}
+
+/* ---------- CONTENEDOR GENERAL ---------- */
+.logs-results {
+  margin: 80px auto;
+  padding: 0 24px;
+  max-width: 1200px;
+}
+
+/* ---------- TITULO SECCIÓN ---------- */
+.logs-results > h2,
+.logs-latest > h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 48px;
+  color: #111827;
+}
+
+/* ---------- GRID DE LOGS ---------- */
+.logs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+/* ---------- TARJETA LOG ---------- */
+.log-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 26px 28px 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+}
+
+.log-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(0,0,0,.12);
+}
+
+/* ---------- LOG CODE ---------- */
+.log-code {
+  font-size: .85rem;
+  font-weight: 700;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* ---------- TITULO ---------- */
+.log-title {
+  margin: 0 0 14px;
+}
+
+.log-title a {
+  color: #4c2fbf;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.log-title a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- META INFO ---------- */
+.log-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: .95rem;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.log-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- TAGS ---------- */
+.log-tags {
+  margin-top: auto;
+}
+
+.log-tags .tag {
+  display: inline-block;
+  background: #e9e5ff;
+  color: #4c2fbf;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+/* =====================================================
+   FILTROS · BUSCAR LOGS POR
+   ===================================================== */
+
+.logs-filter-bar {
+  max-width: 1200px;
+  margin: 60px auto 50px;
+  padding: 22px 28px;
+  background: #f1f1f1;
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.logs-filter-title {
+  font-weight: 800;
+  margin-right: 12px;
+  color: #111827;
+}
+
+.logs-filter-bar select,
+.logs-filter-bar button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: .95rem;
+}
+
+.logs-filter-bar button {
+  background: #4c2fbf;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.logs-filter-bar button:hover {
+  opacity: .9;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .logs-results {
+    margin: 50px auto;
+  }
+
+  .logs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logs-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logs-filter-title {
+    margin-bottom: 8px;
+  }
+}
+
+
+/* ==================================================
+   ENSORLOGS · ABOUT · FONDO BITÁCORA
+   ================================================== */
+
+/* FONDO GENERAL (mesa / cuaderno) */
+.ensorlogs-about {
+  background: #e6e4df; /* gris cuaderno */
+  padding: 70px 20px;
+}
+
+/* GRID */
+.ensorlogs-about-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* ===============================
+   HOJA DE CUADERNO
+   =============================== */
+.about-box {
+  background: #f1f0eb; /* papel NO blanco */
+  border-radius: 6px;
+  padding: 38px 40px;
+  text-align: center;
+
+  border: 1px solid rgba(0,0,0,0.15);
+
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.6) inset,
+    0 8px 18px rgba(0,0,0,0.25);
+
+  position: relative;
+}
+
+/* textura papel */
+.about-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      rgba(0,0,0,0.015) 2px
+    );
+  pointer-events: none;
+}
+
+/* ===============================
+   TEXTOS
+   =============================== */
+
+.about-box h3 {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #1e1e1e;
+  font-weight: 700;
+}
+
+.about-box p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #2e2e2e;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   CTA · BOTÓN FÍSICO BITÁCORA
+   =============================== */
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 4px;
+
+  background: #F2B94B; /* amarillo envejecido */
+  color: #2b2b2b;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+
+  border: 1px solid rgba(0,0,0,0.35);
+
+  box-shadow:
+    0 3px 0 #a88f3f,
+    0 7px 14px rgba(0,0,0,0.35);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 0 #a88f3f,
+    0 5px 10px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   LISTA · CONTENIDO DEL LOG
+   =============================== */
+
+.log-features {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 26px;
+  text-align: left;
+}
+
+.log-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+  color: #2e2e2e;
+  margin-bottom: 14px;
+}
+
+/* marcadores tipo resaltador */
+.log-features li span {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+  transform: rotate(-5deg);
+}
+
+/* colores */
+.feature-yellow span {
+  background: #e0c86a;
+}
+
+.feature-orange span {
+  background: #d79a63;
+}
+
+.feature-green span {
+  background: #a6bb77;
+}
+
+.feature-quiz span {
+  background: #8fa06a;
+}
+
+/* ===============================
+   REDES SOCIALES · ABOUT
+   =============================== */
+
+.about-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+
+.about-social a {
+  color: #6b6b6b;
+  font-size: 28px;
+  text-decoration: none;
+  transition: color .15s ease, transform .15s ease;
+}
+
+.about-social a:hover {
+  color: #2b2b2b;
+  transform: translateY(-2px);
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+  .ensorlogs-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-box {
+    padding: 30px 26px;
+  }
+}
+
+/* ===============================
+   FOOTER · ENSORLOGS
+   =============================== */
+
+.site-footer {
+  background: linear-gradient(to bottom, #2f2f2f, #262626);
+  color: #d6d6d6;
+  padding: 20px 20px;
+  margin-top: 20px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* TEXTO OPEN SOURCE */
+.footer-opensource {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #d0d0d0;
+}
+
+/* TEXTO FINAL */
+.footer-love {
+  font-size: 13.5px;
+  color: #a9a9a9;
+}
+
+/* NEGRITAS SUAVES */
+.site-footer strong {
+  color: #e6c96b; /* mismo tono cálido del site */
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 32px 18px;
+  }
+}
+
+/* ===============================
+   LIBRERÍA DE LOGS
+================================= */
+
+.logs-library {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.logs-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.logs-hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.logs-hero p {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* FILTROS */
+
+.logs-filters {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* GRID */
+
+.logs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+
+.log-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.log-card:hover {
+  transform: translateY(-5px);
+}
+
+.log-number {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.log-card-title {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.log-card-meta {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: #f5c35c;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.badge-quiz {
+  background: #e1a067;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: white;
+}
+
+.log-card-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+}
+
+.log-completed-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2e7d32;
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
