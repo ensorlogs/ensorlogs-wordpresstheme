@@ -34,29 +34,29 @@
 
     <div class="how-notes-grid">
 
-      <div class="how-note note-comprende">
+      <a href="<?php echo esc_url(home_url('/explorar-logs/')); ?>" class="how-note note-comprende">
         <div class="note-header">
           <i class="fa-solid fa-book-open"></i>
           <strong>Comprende el LOG</strong>
         </div>
-        <p>Encuentra un log y entiende el contexto .</p>
-      </div>
+        <p>Encuentra un log y entiende el contexto.</p>
+      </a>
 
-      <div class="how-note note-practica">
+      <a href="<?php echo esc_url(home_url('/explorar-logs/')); ?>" class="how-note note-practica">
         <div class="note-header">
           <i class="fa-solid fa-code"></i>
           <strong>Toma una decisión</strong>
         </div>
         <p>Ponte en mi lugar y decide qué harías tú.</p>
-      </div>
+      </a>
 
-      <div class="how-note note-evalua">
+      <a href="<?php echo esc_url(home_url('/explorar-logs/')); ?>" class="how-note note-evalua">
         <div class="note-header">
           <i class="fa-solid fa-circle-check"></i>
           <strong>Descubre la solución</strong>
         </div>
         <p>Contrasta tu decisión con lo que me funcionó.</p>
-      </div>
+      </a>
 
     </div>
 
@@ -158,7 +158,7 @@ $query = new WP_Query($args);
 
     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-      <article class="log-card">
+      <article class="log-card" data-log-id="<?php echo get_the_ID(); ?>">
 
         <div class="log-code">
           💬 LOG <?php echo esc_html(get_field('log_number')); ?>
@@ -243,7 +243,13 @@ donde tú decides conmigo qué hacer antes de ver la solución.
     <!-- COLUMNA DERECHA -->
     <div class="about-box">
 
-      <h3>Qué encontrarás en cada Log</h3>
+      <div class="log-structure-header">
+        <span class="log-indicator">
+          <span class="log-dot"></span>
+          LOG SYSTEM ACTIVE
+        </span>
+        <h3>Qué encontrarás en cada Log</h3>
+      </div>
 
       <ul class="log-features">
         <li class="feature-yellow">
@@ -274,6 +280,26 @@ donde tú decides conmigo qué hacer antes de ver la solución.
 
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
 
+  const completedLogs = JSON.parse(localStorage.getItem("completedLogs") || "[]");
+
+  completedLogs.forEach(logId => {
+    const card = document.querySelector(`.log-card[data-log-id='${logId}']`);
+
+    if (card) {
+      // Avoid duplicating badge
+      if (!card.querySelector(".log-card-completed")) {
+        const badge = document.createElement("div");
+        badge.className = "log-card-completed";
+        badge.textContent = "✔ Completado";
+        card.prepend(badge);
+      }
+    }
+  });
+
+});
+</script>
 
 <?php get_footer(); ?>

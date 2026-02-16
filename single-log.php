@@ -16,21 +16,26 @@
 ?>
 
 <main class="log-single"
+  data-log-id="<?php echo get_the_ID(); ?>"
   data-quiz-correct="<?php echo esc_attr($correct); ?>"
   data-hints="<?php echo esc_attr(str_replace("\n", "||", get_field('log_pistas'))); ?>"
 >
 
-  <!-- BREADCRUMB -->
-  <nav class="log-breadcrumb">
-    <a href="<?php echo home_url(); ?>">Inicio</a> /
-    <a href="<?php echo get_post_type_archive_link('log'); ?>">Logs</a> /
-    <span><?php the_title(); ?></span>
-  </nav>
-
   <!-- HEADER -->
   <section class="log-header">
-    <div class="log-id">
-      💬 LOG <?php echo esc_html(get_post_meta(get_the_ID(), 'log_number', true)); ?>
+
+    <div class="log-header-top">
+
+      <nav class="log-breadcrumb">
+        <a href="<?php echo home_url(); ?>">Inicio</a> /
+        <a href="<?php echo get_post_type_archive_link('log'); ?>">Logs</a> /
+        <span><?php the_title(); ?></span>
+      </nav>
+
+      <div class="log-id">
+        💬 LOG <?php echo esc_html(get_post_meta(get_the_ID(), 'log_number', true)); ?>
+      </div>
+
     </div>
 
     <div class="log-title-card">
@@ -121,6 +126,39 @@
 
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const finishBtn = document.querySelector(".log-finish-btn");
+  const main = document.querySelector(".log-single");
+
+  if (!finishBtn || !main) return;
+
+  const logId = main.dataset.logId;
+
+  let completedLogs = JSON.parse(localStorage.getItem("completedLogs") || "[]");
+
+  // Si ya estaba completado
+  if (completedLogs.includes(logId)) {
+    finishBtn.classList.add("is-completed");
+    finishBtn.innerHTML = "✔ Log completado";
+  }
+
+  finishBtn.addEventListener("click", function() {
+
+    if (!completedLogs.includes(logId)) {
+      completedLogs.push(logId);
+      localStorage.setItem("completedLogs", JSON.stringify(completedLogs));
+    }
+
+    finishBtn.classList.add("is-completed");
+    finishBtn.innerHTML = "✔ Log completado";
+
+  });
+
+});
+</script>
 <?php endif; ?>
 
   <!-- PISTAS -->

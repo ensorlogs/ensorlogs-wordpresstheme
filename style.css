@@ -161,9 +161,23 @@ body {
 }
 
 .custom-logo {
-  max-height: 90px;   /* CLAVE */
+  max-height: 90px;
   width: auto;
-  border-radius: 50%; /* mantiene el estilo avatar */
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto; /* centra horizontalmente */
+  transform-origin: center center;
+  animation: ensorLookRight 1.5s ease-in-out infinite alternate;
+}
+
+/* Imagen en espejo + animación hacia la derecha */
+@keyframes ensorLookRight {
+  0% {
+    transform: scaleX(-1) rotate(0deg);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-8deg);
+  }
 }
 
 .site-header {
@@ -191,30 +205,44 @@ body {
 
 @media (max-width: 767px) {
 
-  /* HEADER EN COLUMNA */
-  .site-header {
+  /* Estructura general */
+  .header-inner {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    text-align: center;
+    gap: 18px;
   }
 
-  /* LOGO */
-  .site-logo {
-    display: flex;
+  /* Logo centrado */
+  .site-branding {
+    justify-content: center;
+  }
+
+  .custom-logo {
+    margin: 0 auto;
+    max-height: 72px;
+  }
+
+  /* Texto branding centrado */
+  .branding-text {
+    margin-left: 0;
     align-items: center;
-    gap: 10px;
   }
 
-  .site-logo img {
-    width: 42px;
-    height: 42px;
+  .site-name {
+    font-size: 22px;
+    letter-spacing: 2px;
   }
 
-  .site-logo span {
-    font-size: 18px;
+  .site-tagline {
+    font-size: 13px;
   }
 
-  /* PILL */
+  .site-terminal {
+    font-size: 12px;
+  }
+
+  /* PILL debajo */
   .header-pill {
     width: 100%;
     justify-content: center;
@@ -230,7 +258,7 @@ body {
     font-size: 14px;
   }
 
-  /* BUSCADOR FUERA DEL HEADER EN MÓVIL */
+  /* Ocultar buscador en móvil */
   .header-pill .pill-search {
     display: none;
   }
@@ -376,16 +404,63 @@ body {
 }
 
 /* COLORES TIPO LIBRETA */
-.note-comprende {
-  background: #F5C35C;
-}
 
-.note-practica {
-  background: #e1a067;
-}
+/* ===============================
+   HOW IT WORKS · BRAND CARDS 2.0
+   =============================== */
 
+.note-comprende,
+.note-practica,
 .note-evalua {
-  background: #a8be7b;
+  border-radius: 18px;
+  padding: 32px 28px;
+  border: none;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+  color: #1a1a1a;
+}
+
+.note-comprende:hover,
+.note-practica:hover,
+.note-evalua:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.18);
+}
+
+/* CARD 1 · AMARILLO */
+.note-comprende {
+  background: linear-gradient(145deg, #F5C35C 0%, #e9b34d 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* CARD 2 · NARANJA */
+.note-practica {
+  background: linear-gradient(145deg, #E1A067 0%, #d28e55 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* CARD 3 · VERDE */
+.note-evalua {
+  background: linear-gradient(145deg, #A8BE7B 0%, #97ad6c 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* TITULOS DENTRO DE CARDS */
+.note-comprende .note-header,
+.note-practica .note-header,
+.note-evalua .note-header {
+  font-weight: 800;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+/* TEXTO INTERNO */
+.note-comprende p,
+.note-practica p,
+.note-evalua p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.75);
 }
 
 /* RESPONSIVE */
@@ -496,6 +571,7 @@ body.home section .log-card {
 }
 
 /* ---------- TARJETA LOG ---------- */
+/* Reemplazo completo del bloque .log-card para sección LOGS */
 .log-card {
   background: #ffffff;
   border-radius: 20px;
@@ -503,6 +579,18 @@ body.home section .log-card {
   box-shadow: 0 15px 40px rgba(0,0,0,.08);
   transition: transform .25s ease, box-shadow .25s ease;
   position: relative;
+  overflow: hidden;
+}
+
+/* Barra superior degradada tipo brand */
+.log-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #F5C35C, #E1A067, #A8BE7B);
 }
 
 .log-card:hover {
@@ -840,6 +928,25 @@ body.home section .log-card {
   text-align: center;
 }
 
+ .footer-social {
+   margin-top: 22px;
+   display: flex;
+   justify-content: center;
+   gap: 28px;
+ }
+
+.footer-social a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform .2s ease, color .2s ease;
+}
+
+.footer-social a:hover {
+  color: #A8BE7B;
+  transform: translateY(-3px);
+}
+
 /* TEXTO OPEN SOURCE */
 .footer-opensource {
   font-size: 14.5px;
@@ -873,7 +980,7 @@ body.home section .log-card {
 
 .logs-library {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 40px auto 80px;
   padding: 0 20px;
 }
 
@@ -925,13 +1032,26 @@ body.home section .log-card {
 
 /* CARD */
 
+/* Reemplazo completo del bloque .log-card para LIBRERÍA DE LOGS */
 .log-card {
-  background: white;
+  background: #ffffff;
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
   position: relative;
   transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* Barra superior degradada tipo brand */
+.log-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #F5C35C, #E1A067, #A8BE7B);
 }
 
 .log-card:hover {
@@ -987,4 +1107,446 @@ body.home section .log-card {
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 20px;
+}
+
+
+/* ==================================================
+   ENSOR.LOGS · BRANDING GEEK UPGRADE
+   ================================================== */
+
+.branding-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 14px;
+}
+
+/* TÍTULO PRINCIPAL */
+.site-name {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* LEMA */
+.site-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+  color: #d6d6d6;
+  letter-spacing: 0.5px;
+}
+
+/* LÍNEA TERMINAL · TYPEWRITER EFFECT */
+.site-terminal {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #BFD98F;
+  text-shadow: 0 0 6px rgba(191,217,143,0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #BFD98F;
+  width: 0;
+  animation: typing 4s steps(35, end) infinite,
+             blinkCursor 0.8s infinite;
+}
+
+@keyframes typing {
+  0% { width: 0 }
+  40% { width: 100% }
+  60% { width: 100% }
+  100% { width: 0 }
+}
+
+@keyframes blinkCursor {
+  0%, 50%, 100% { border-color: #BFD98F; }
+  25%, 75% { border-color: transparent; }
+}
+
+
+/* ==================================================
+   HEADER · ALIGNMENT IMPROVEMENT (DESKTOP + MOBILE)
+   ================================================== */
+
+/* Desktop balance */
+.header-inner {
+  justify-content: space-between;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+/* Center pill properly */
+.header-pill {
+  margin-left: auto;
+}
+
+/* ================= MOBILE REFINEMENT ================= */
+
+@media (max-width: 767px) {
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .main-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-pill {
+    width: 95%;
+    max-width: 420px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .pill-menu {
+    justify-content: center;
+  }
+
+}
+
+/* =========================
+   LOG SYSTEM INDICATOR
+   ========================= */
+
+.log-structure-header {
+  margin-bottom: 24px;
+}
+
+.log-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: #2D2D2D;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.log-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #A8BE7B;
+  box-shadow: 0 0 6px #A8BE7B, 0 0 12px rgba(168,190,123,0.7);
+  animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* ==================================================
+   ENSORLOGS · ABOUT · BRAND SYSTEM (FINAL)
+   ================================================== */
+
+/* --- REPLACED: .about-hero, .about-hero h1, .about-subtitle --- */
+.about-hero {
+  background: #f6f3ee;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  margin: 20px 0 12px;
+  font-weight: 800;
+  color: #1e1e1e;
+}
+
+.about-subtitle {
+  font-size: 18px;
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* SECTIONS */
+.about-section {
+  background: #f6f3ee;
+  padding: 60px 20px 50px; /* menos espacio arriba y abajo */
+}
+
+.about-section.alt {
+  background: #ece9e3;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARDS */
+/* ===============================
+   ABOUT · HOME STYLE CARD SYSTEM
+   =============================== */
+
+.about-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f9f7f2 100%);
+  padding: 40px 45px; /* menos aire interno */
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* barra superior tipo home cards */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #F5C35C, #E1A067, #A8BE7B);
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.12);
+}
+
+.about-card h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+  color: #1e1e1e;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.about-card p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 14px;
+  max-width: 850px;
+}
+
+/* ===============================
+   FILOSOFÍA · COLORES COMO HOME
+   =============================== */
+
+.about-card.philosophy {
+  border: none;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+/* Primer card - Amarillo */
+.about-grid .about-card.philosophy:nth-child(1) {
+  background: linear-gradient(145deg, #F5C35C 0%, #e9b34d 100%);
+  color: #1a1a1a;
+}
+
+/* Segundo card - Naranja */
+.about-grid .about-card.philosophy:nth-child(2) {
+  background: linear-gradient(145deg, #E1A067 0%, #d28e55 100%);
+  color: #1a1a1a;
+}
+
+/* Tercer card - Verde */
+.about-grid .about-card.philosophy:nth-child(3) {
+  background: linear-gradient(145deg, #A8BE7B 0%, #97ad6c 100%);
+  color: #1a1a1a;
+}
+
+.about-card.philosophy h3 {
+  font-family: "Courier New", monospace;
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+
+.about-grid .about-card.philosophy p {
+  color: rgba(0,0,0,0.8);
+}
+
+/* LISTA OBJETIVO */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.about-list li {
+  margin-bottom: 18px;
+  padding: 14px 18px 14px 36px;
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  background: #f7f6f3;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.about-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-list li::before {
+  content: ">";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: #A8BE7B;
+  font-size: 18px;
+}
+
+/* FILOSOFÍA GRID */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* FILOSOFÍA CARD */
+
+/* WIDGET AREA */
+.social-widgets {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.widget-placeholder {
+  background: linear-gradient(180deg, #232a31 0%, #161b21 100%);
+  border-radius: 18px;
+  padding: 60px 30px;
+  text-align: center;
+  color: var(--ensor-green);
+  font-family: "Courier New", monospace;
+  border: 1px solid rgba(155,156,98,0.35);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* FIRMA FINAL */
+.about-signature {
+  font-size: 20px;
+  margin-top: 40px;
+  color: var(--ensor-orange);
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .about-hero h1 {
+    font-size: 36px;
+  }
+
+  .about-card {
+    padding: 40px 28px;
+  }
+
+  .about-grid {
+    gap: 28px;
+  }
+
+}
+
+/* ===============================
+   LOG PROGRESS · BRAND GREEN FIX
+   =============================== */
+
+.log-progress-bar,
+.log-progress,
+.progress-bar {
+  background: #A8BE7B !important;
+  box-shadow: 0 0 6px rgba(168,190,123,0.6);
+}
+/* ===============================
+   CURSOR RESET · SIMPLE DARK
+   =============================== */
+
+html, body, * {
+  cursor: default !important;
+}
+
+/* Slightly darker text selection caret (for inputs) */
+input, textarea {
+  caret-color: #2D2D2D;
+}
+
+/* RESET CURSOR A SISTEMA */
+html, body {
+  cursor: auto !important;
+}
+
+a, button {
+  cursor: pointer !important;
+}
+
+input, textarea {
+  cursor: text !important;
+}
+
+
+/* CARDS ACTUALIZADAS COMPLETADAS */
+
+.log-card-completed {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: #A8BE7B;
+  color: #1f1f1f;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* CONTADOR DE LOGS - HEADER */
+
+.global-progress {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: #d6d6d6;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.global-progress::before {
+  content: "> ";
+  color: #d6d6d6;
+}
+
+.global-progress-count {
+  color: #EDB952;
+  font-weight: 700;
+}
+
+.global-progress-label {
+  color: #d6d6d6;
 }
